@@ -1,5 +1,7 @@
 # HilbertCurve
 
+[![Build Status](https://travis-ci.org/FX-HAO/HilbertCurve.svg?branch=master)](https://travis-ci.org/FX-HAO/HilbertCurve)
+
 This is a Hilbert curve implementation in Haskell.
 
 A [Hilbert curve](https://en.wikipedia.org/wiki/Hilbert_curve) (also known as a Hilbert space-filling curve) is a continuous fractal space-filling curve, which is a curve whose range contains the entire 2-dimensional unit square.
