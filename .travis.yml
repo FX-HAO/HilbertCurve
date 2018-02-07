@@ -1,0 +1,8 @@
+language: haskell
+sudo: false
+
+ghc:
+  - "8.0"
+
+script: 
+  - cabal test --log=/dev/stdout
