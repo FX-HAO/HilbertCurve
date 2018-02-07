@@ -21,7 +21,7 @@ ghci> :l src/HilbertCurve.hs
 [1 of 1] Compiling HilbertCurve     ( src/HilbertCurve.hs, interpreted )
 Ok, modules loaded: HilbertCurve.
 ghci> xy2d 2 1 1
-2
+Just 2
 ghci> d2xy 2 2
 Just (1,1)
 ```

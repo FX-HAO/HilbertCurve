@@ -2,11 +2,13 @@ module HilbertCurve (xy2d, d2xy) where
 
 import Data.Bits ((.&.), xor)
 
-xy2d :: Int -> Int -> Int -> Int
-xy2d n x y =
-    let d = 0
-        s = n `quot` 2
-     in xy2dHelper x y s d
+xy2d :: Int -> Int -> Int -> Maybe Int
+xy2d n x y
+    | n < 1 || x >= n || y >= n || x < 0 || y < 0 = Nothing
+    | otherwise =
+        let d = 0
+            s = n `quot` 2
+        in Just $ xy2dHelper x y s d
 
 boolToCInt True = 1
 boolToCInt False = 0
@@ -24,10 +26,12 @@ xy2dHelper x y s d
                                 Nothing -> xy2dHelper x y s' d'
 
 d2xy :: Int -> Int -> Maybe (Int, Int)
-d2xy n d =
-    let x = 0
-        y = 0
-    in Just $ d2xyHelper 1 n d x y
+d2xy n d
+    | n < 1 || d < 0 || d >= n * n = Nothing
+    | otherwise = 
+        let x = 0
+            y = 0
+        in Just $ d2xyHelper 1 n d x y
 
 d2xyHelper :: Int -> Int -> Int -> Int -> Int -> (Int, Int)
 d2xyHelper s n t x y
